@@ -10,11 +10,11 @@ export const coordintors = [
 // Current members data
 export const members = [
   { name: 'Teja Reddy', designation: 'Student Coordinator', img_url: '/images/team-img/KOYEE TEJA REDDY.jpg', batch: '2022-2026', branch: 'GCT' },
-  { name: 'Ankita Singh', designation: 'Co-Coordinator', img_url: '/images/team-img/Ankita Singh.jpg', batch: '2023-2027', branch: 'GEE' },
+  { name: 'Ankita Singh', designation: 'Co-Coordinator', img_url: '/images/team-img/Ankita Singh.jpg', batch: '2023-2026', branch: 'GEE' },
   { name: 'Devansh', designation: 'Event Coordinator', img_url: '/images/team-img/DEVANSH.jpg', batch: '2022-2026', branch: 'GME' },
-  { name: 'Ankit Kumar', designation: 'Projects Head', img_url: '/images/team-img/2010417 - Ankit Kumar Sha.jpg', batch: '2023-2027', branch: 'GEE' },
-  { name: 'Prashant Mishra', designation: 'Technical Head', img_url: '/images/team-img/Prahant Mishra.jpg', batch: '2023-2027', branch: 'GEE' },
-  { name: 'Sandarbh Kumar', designation: 'Resource Head', img_url: '/images/team-img/SANDARBH KUMAR.jpg', batch: '2023-2027', branch: 'GCS' },
+  { name: 'Ankit Kumar', designation: 'Projects Head', img_url: '/images/team-img/2010417 - Ankit Kumar Sha.jpg', batch: '2023-2026', branch: 'GEE' },
+  { name: 'Prashant Mishra', designation: 'Technical Head', img_url: '/images/team-img/Prahant Mishra.jpg', batch: '2023-2026', branch: 'GEE' },
+  { name: 'Sandarbh Kumar', designation: 'Resource Head', img_url: '/images/team-img/SANDARBH KUMAR.jpg', batch: '2023-2026', branch: 'GCS' },
   { name: 'Akanksha Armo', designation: 'Jr.Student Coordinator', img_url: '/images/team-img/AKANKSHA ARMO.jpg', batch: '2023-2027', branch: 'GCS' },
   { name: 'Aadarsh Nath', designation: 'Documentation', img_url: '/images/team-img/Aadarsh Nath.JPG', batch: '2023-2027', branch: 'GCS' },
   { name: 'Piyush Gupta', designation: 'Fund Manager', img_url: '/images/team-img/PIYUSH GUPTA.jpg', batch: '2023-2027', branch: 'GEC' },
@@ -249,7 +249,7 @@ export const iot_projects = [
   {
     title: "Smart Home Automation",
     description: "A comprehensive IoT-based home automation system that controls lighting, temperature, and security.",
-    image: "/images/project-img/drone.jpg",
+    image: "https://www.electricaltechnology.org/wp-content/uploads/2019/07/Smart-Home-Automation-System.png",
     technologies: ["Arduino", "ESP32", "Node.js", "React"],
     status: "Completed"
   },
@@ -263,7 +263,7 @@ export const iot_projects = [
   {
     title: "Smart Parking System",
     description: "IoT-based parking management system with real-time availability tracking.",
-    image: "/images/project-img/drone.jpg",
+    image: "https://advcloudfiles.advantech.com/cms/825eb685-aef1-4e3f-b573-57d074acfd00/Content/content-image-1564312208213.jpg",
     technologies: ["Arduino", "Ultrasonic Sensors", "Web App", "Database"],
     status: "Completed"
   }

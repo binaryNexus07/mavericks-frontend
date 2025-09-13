@@ -1,5 +1,8 @@
 <template>
   <div class="home">
+    <!-- Registration Popup Component -->
+    <RegistrationPopup />
+
     <!-- Hero Section with Image Slider -->
     <section class="hero-section position-relative">
       <!-- Image Slider -->
@@ -223,9 +226,13 @@
 <script>
 import { computed, ref, onMounted, onUnmounted } from 'vue'
 import { members, iot_projects, events, coordintors } from '@/data'
+import RegistrationPopup from '@/components/RegistrationPopup.vue'
 
 export default {
   name: 'Home',
+  components: {
+    RegistrationPopup
+  },
   setup() {
     const currentSlide = ref(0)
     let slideInterval = null

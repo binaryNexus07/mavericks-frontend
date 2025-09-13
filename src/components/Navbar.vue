@@ -35,6 +35,11 @@
           <li class="nav-item">
             <router-link class="nav-link animate-slide-in" to="/gallery" @click="handleNavLinkClick">Gallery</router-link>
           </li>
+          <li class="nav-item">
+            <router-link class="nav-link animate-slide-in" to="/student-registration" @click="handleNavLinkClick">
+              <i class="fas fa-user-plus me-1"></i>Join Us
+            </router-link>
+          </li>
           
           <template v-if="authStore.isAuthenticated">
             <li class="nav-item">

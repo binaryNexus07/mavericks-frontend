@@ -229,7 +229,7 @@ export default {
       {
         title: "Autonomous Line Follower",
         description: "A robot that follows a line autonomously using infrared sensors and PID control.",
-        image: "/images/project-img/drone.jpg",
+        image: "https://i.ytimg.com/vi/nzZRsMbKrvo/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCLu74H9OFALokEbga54JWWQuXg5Q",
         technologies: ["Arduino", "PID Control", "Infrared Sensors", "DC Motors"],
         status: "Completed",
         date: "2024-01-15",
@@ -251,7 +251,7 @@ export default {
       {
         title: "Gesture Controlled Robot",
         description: "A robot that can be controlled using hand gestures captured by a camera.",
-        image: "/images/project-img/drone.jpg",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwPkPmBV9rUD18aJwm6tZmzdpnvIbp-7M_ew&s",
         technologies: ["Python", "OpenCV", "Arduino", "Bluetooth"],
         status: "Upcoming",
         date: "2024-04-01",
