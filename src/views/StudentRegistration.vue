@@ -89,11 +89,47 @@
                         <option value="GEC">Electronics & Communication (GEC)</option>
                         <option value="GCT">Computer Technology (GCT)</option>
                         <option value="GIN">Instrumentation Engineering (GIN)</option>
-                        <option value="CSME">Computer Science & Mechanical (CSME)</option>
+                        <option value="GFT">Food Technology (GFT)</option>
                         <option value="Other">Other</option>
                       </select>
                       <div v-if="errors.trade" class="invalid-feedback">
                         {{ errors.trade }}
+                      </div>
+                    </div>
+
+                    <!-- Other Branch Input - Show only when "Other" is selected -->
+                    <div v-if="formData.trade === 'Other'" class="col-md-12 mb-3">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label for="otherBranchName" class="form-label">Branch Name *</label>
+                          <input 
+                            type="text" 
+                            class="form-control"
+                            :class="{ 'is-invalid': errors.otherBranchName }"
+                            id="otherBranchName" 
+                            v-model="formData.otherBranchName"
+                            placeholder="e.g., Biotechnology Engineering"
+                            required
+                          >
+                          <div v-if="errors.otherBranchName" class="invalid-feedback">
+                            {{ errors.otherBranchName }}
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="otherBranchCode" class="form-label">Branch Code *</label>
+                          <input 
+                            type="text" 
+                            class="form-control"
+                            :class="{ 'is-invalid': errors.otherBranchCode }"
+                            id="otherBranchCode" 
+                            v-model="formData.otherBranchCode"
+                            placeholder="e.g., GBT"
+                            required
+                          >
+                          <div v-if="errors.otherBranchCode" class="invalid-feedback">
+                            {{ errors.otherBranchCode }}
+                          </div>
+                        </div>
                       </div>
                     </div>
 
@@ -105,9 +141,13 @@
                         :class="{ 'is-invalid': errors.email }"
                         id="email" 
                         v-model="formData.email"
-                        placeholder="your.email@example.com"
+                        placeholder="youremail@sliet.ac.in"
                         required
                       >
+                      <div class="form-text">
+                        <i class="fas fa-info-circle me-1"></i>
+                        Please use your official SLIET email address (@sliet.ac.in)
+                      </div>
                       <div v-if="errors.email" class="invalid-feedback">
                         {{ errors.email }}
                       </div>
@@ -141,19 +181,14 @@
                   </h4>
 
                   <div class="mb-3">
-                    <label for="motivation" class="form-label">Why do you want to join Team Mavericks? *</label>
+                    <label for="motivation" class="form-label">Why do you want to join Team Mavericks?</label>
                     <textarea 
                       class="form-control"
-                      :class="{ 'is-invalid': errors.motivation }"
                       id="motivation" 
                       v-model="formData.motivation"
                       rows="4"
                       placeholder="Tell us about your interest in robotics and why you want to be part of our team..."
-                      required
                     ></textarea>
-                    <div v-if="errors.motivation" class="invalid-feedback">
-                      {{ errors.motivation }}
-                    </div>
                   </div>
 
                   <div class="mb-3">
@@ -246,9 +281,34 @@
 
               <!-- Success Message -->
               <div v-if="showSuccess" class="alert alert-success mt-4" role="alert">
-                <i class="fas fa-check-circle me-2"></i>
-                <strong>Application Submitted Successfully!</strong> 
-                Thank you for applying to Team Mavericks. We will review your application and get back to you soon.
+                <div class="d-flex align-items-start">
+                  <i class="fas fa-check-circle me-2 mt-1"></i>
+                  <div>
+                    <strong>Application Submitted Successfully!</strong>
+                    <p class="mb-3">
+                      Thank you for applying to Team Mavericks. We will review your application and get back to you soon.
+                    </p>
+                    
+                    <div class="mt-3 p-3 rounded">
+                      <h6 class="mb-2">
+                        <i class="fab fa-whatsapp text-success me-2"></i>
+                        Join Our Community
+                      </h6>
+                      <p class="mb-2 small">
+                        While we review your application, join our WhatsApp group to stay updated with Team Mavericks activities, events, and announcements!
+                      </p>
+                      <a 
+                        href=" https://chat.whatsapp.com/D64S9cQtZa8K3JHfrYHoW5?mode=ems_wa_t" 
+                        class="btn btn-success btn-sm"
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                      >
+                        <i class="fab fa-whatsapp me-1"></i>
+                        Join WhatsApp Group
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -268,6 +328,8 @@ export default {
       fullName: '',
       registrationNumber: '',
       trade: '',
+      otherBranchName: '',
+      otherBranchCode: '',
       email: '',
       phoneNumber: '',
       motivation: '',
@@ -291,30 +353,36 @@ export default {
 
       if (!formData.registrationNumber.trim()) {
         errors.registrationNumber = 'Registration number is required'
-      } else if (!/^\d{7}$/.test(formData.registrationNumber.trim())) {
-        errors.registrationNumber = 'Registration number must be 7 digits'
+      } else if (!/^\d{7,10}$/.test(formData.registrationNumber.trim())) {
+        errors.registrationNumber = 'Registration number must be 7 to 10 digits'
       }
 
       if (!formData.trade) {
         errors.trade = 'Please select your branch/trade'
       }
 
+      // Validate "Other" branch fields if selected
+      if (formData.trade === 'Other') {
+        if (!formData.otherBranchName.trim()) {
+          errors.otherBranchName = 'Branch name is required'
+        }
+        if (!formData.otherBranchCode.trim()) {
+          errors.otherBranchCode = 'Branch code is required'
+        } else if (!/^[A-Z]{2,4}$/.test(formData.otherBranchCode.trim().toUpperCase())) {
+          errors.otherBranchCode = 'Branch code should be 2-4 uppercase letters (e.g., GBT)'
+        }
+      }
+
       if (!formData.email.trim()) {
         errors.email = 'Email is required'
-      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-        errors.email = 'Please enter a valid email address'
+      } else if (!/^[^\s@]+@sliet\.ac\.in$/.test(formData.email.trim())) {
+        errors.email = 'Please enter a valid SLIET email address (@sliet.ac.in)'
       }
 
       if (!formData.phoneNumber.trim()) {
         errors.phoneNumber = 'Phone number is required'
       } else if (!/^(\+91|91)?[\s-]?[6-9]\d{9}$/.test(formData.phoneNumber.replace(/\s+/g, ''))) {
         errors.phoneNumber = 'Please enter a valid Indian phone number'
-      }
-
-      if (!formData.motivation.trim()) {
-        errors.motivation = 'Please tell us why you want to join'
-      } else if (formData.motivation.trim().length < 10) {
-        errors.motivation = 'Please provide at least 10 characters'
       }
 
       if (!formData.resume) {
@@ -376,7 +444,15 @@ export default {
         const basePayload = {
           fullName: formData.fullName,
           registrationNumber: formData.registrationNumber,
-          trade: formData.trade,
+          trade: formData.trade === 'Other' 
+            ? `Other-${formData.otherBranchCode.toUpperCase()}-${formData.otherBranchName}`
+            : formData.trade,
+          // Include other branch details if "Other" is selected for reference
+          ...(formData.trade === 'Other' && {
+            otherBranchName: formData.otherBranchName,
+            otherBranchCode: formData.otherBranchCode.toUpperCase(),
+            originalTrade: 'Other'
+          }),
           email: formData.email,
           phoneNumber: formData.phoneNumber,
           motivation: formData.motivation,

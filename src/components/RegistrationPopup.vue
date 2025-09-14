@@ -58,18 +58,17 @@ export default {
 
     const closePopup = () => {
       showPopup.value = false
-      // Remember that popup was shown today
-      localStorage.setItem('registrationPopupLastShown', new Date().toDateString())
+      // Remember popup was closed only for this session (not permanently)
+      sessionStorage.setItem('registrationPopupClosed', 'true')
     }
 
     const checkAndShowPopup = () => {
-      // Show registration popup after 2 seconds if not shown recently
+      // Check if popup was closed in this session
+      const popupClosed = sessionStorage.getItem('registrationPopupClosed')
+      
+      // Show registration popup after 2 seconds if not closed in this session
       setTimeout(() => {
-        const lastShown = localStorage.getItem('registrationPopupLastShown')
-        const today = new Date().toDateString()
-        
-        // Show popup if never shown before or if last shown was not today
-        if (!lastShown || lastShown !== today) {
+        if (!popupClosed) {
           showPopup.value = true
         }
       }, 2000)

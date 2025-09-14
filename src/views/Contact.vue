@@ -52,7 +52,7 @@
                 </div>
                 <div>
                   <h6 class="mb-1">Phone</h6>
-                  <p class="text-muted mb-0">+91 98765 43210</p>
+                  <p class="text-muted mb-0">+91 ___________</p>
                 </div>
               </div>
               
@@ -62,7 +62,7 @@
                 </div>
                 <div>
                   <h6 class="mb-1">Email</h6>
-                  <p class="text-muted mb-0">info@mavericks.com</p>
+                  <p class="text-muted mb-0">mavericks@sliet.ac.in</p>
                 </div>
               </div>
               
@@ -84,16 +84,16 @@
             <div class="social-media mt-5">
               <h6 class="mb-3">Follow Us</h6>
               <div class="social-links">
-                <a href="#" class="social-link me-3">
+                <a href="https://www.facebook.com/mavericks.sliet" class="social-link me-3" target="_blank" rel="noopener noreferrer">
                   <i class="fab fa-facebook-f fa-2x text-primary"></i>
                 </a>
                 <a href="#" class="social-link me-3">
                   <i class="fab fa-twitter fa-2x text-primary"></i>
                 </a>
-                <a href="#" class="social-link me-3">
+                <a href="https://instagram.com/mavericks_sliet?igshid=NTdlMDg3MTY=" class="social-link me-3" target="_blank" rel="noopener noreferrer">
                   <i class="fab fa-instagram fa-2x text-primary"></i>
                 </a>
-                <a href="#" class="social-link me-3">
+                <a href="https://www.linkedin.com/company/team-mavericks/" class="social-link me-3" target="_blank" rel="noopener noreferrer">
                   <i class="fab fa-linkedin-in fa-2x text-primary"></i>
                 </a>
                 <a href="#" class="social-link">
@@ -380,17 +380,46 @@ export default {
       isSubmitting.value = true
       
       try {
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 2000))
+        // Create mailto link to send via client's email application
+        const emailSubject = `Contact Form: ${form.subject}`
+        const emailBody = `Dear Team Mavericks,
+
+I am contacting you regarding: ${form.subject}
+
+Name: ${form.name}
+Email: ${form.email}
+Phone: ${form.phone || 'Not provided'}
+
+Message:
+${form.message}
+
+---
+Sent from Team Mavericks website contact form
+Date: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
+
+Please reply to this email address: ${form.email}
+
+Best regards,
+${form.name}`
+
+        const mailtoLink = `mailto:mavericks@sliet.ac.in?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`
+        
+        // Open client's default email application
+        window.location.href = mailtoLink
+        
+        // Small delay to ensure mailto link is processed
+        await new Promise(resolve => setTimeout(resolve, 1000))
         
         // Reset form
         Object.keys(form).forEach(key => {
           form[key] = ''
         })
         
-        toast.success('Your message has been sent successfully! We will get back to you soon.')
+        toast.success('Your email client has been opened with a pre-filled message to mavericks@sliet.ac.in. Please send the email from your email application.')
+        
       } catch (error) {
-        toast.error('An error occurred while sending your message. Please try again later.')
+        console.error('Error opening email client:', error)
+        toast.error('Unable to open email client. Please manually email us at mavericks@sliet.ac.in')
       } finally {
         isSubmitting.value = false
       }
