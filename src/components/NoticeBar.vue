@@ -7,7 +7,7 @@
         </div>
         <div class="notice-text">
           <strong>🎉 Recruitment Open!</strong>
-          Team Mavericks is hiring new members. Last date: <strong>21st September, 2025</strong>
+          Team Mavericks is recruiting new members. Last date: <strong>21st September, 2025</strong>
         </div>
         <div class="notice-actions">
           <router-link to="/student-registration" class="notice-btn">

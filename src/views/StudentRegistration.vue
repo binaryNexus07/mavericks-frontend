@@ -141,13 +141,9 @@
                         :class="{ 'is-invalid': errors.email }"
                         id="email" 
                         v-model="formData.email"
-                        placeholder="youremail@sliet.ac.in"
+                        placeholder="youremail@exmaple.com"
                         required
                       >
-                      <div class="form-text">
-                        <i class="fas fa-info-circle me-1"></i>
-                        Please use your official SLIET email address (@sliet.ac.in)
-                      </div>
                       <div v-if="errors.email" class="invalid-feedback">
                         {{ errors.email }}
                       </div>
@@ -168,6 +164,65 @@
                       >
                       <div v-if="errors.phoneNumber" class="invalid-feedback">
                         {{ errors.phoneNumber }}
+                      </div>
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                      <label for="gender" class="form-label">Gender *</label>
+                      <select 
+                        class="form-select"
+                        :class="{ 'is-invalid': errors.gender }"
+                        id="gender" 
+                        v-model="formData.gender"
+                        required
+                      >
+                        <option value="">Select gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                      </select>
+                      <div v-if="errors.gender" class="invalid-feedback">
+                        {{ errors.gender }}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="program" class="form-label">Program *</label>
+                      <select 
+                        class="form-select"
+                        :class="{ 'is-invalid': errors.program }"
+                        id="program" 
+                        v-model="formData.program"
+                        required
+                      >
+                        <option value="">Select your program</option>
+                        <option value="BE">Bachelor of Engineering (BE)</option>
+                        <option value="ICD">Integrated Certificate Diploma (ICD)</option>
+                        <option value="Other">Other</option>
+                      </select>
+                      <div v-if="errors.program" class="invalid-feedback">
+                        {{ errors.program }}
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                      <label for="year" class="form-label">Year *</label>
+                      <select 
+                        class="form-select"
+                        :class="{ 'is-invalid': errors.year }"
+                        id="year" 
+                        v-model="formData.year"
+                        required
+                      >
+                        <option value="">Select your year</option>
+                        <option value="1st">1st Year</option>
+                        <option value="2nd">2nd Year</option>
+                        <option value="3rd">3rd Year</option>
+                      </select>
+                      <div v-if="errors.year" class="invalid-feedback">
+                        {{ errors.year }}
                       </div>
                     </div>
                   </div>
@@ -211,7 +266,7 @@
                   </h4>
                   
                   <div class="mb-3">
-                    <label for="resume" class="form-label">Upload Resume (PDF only) *</label>
+                    <label for="resume" class="form-label">Upload Resume (PDF only) - Optional</label>
                     <input 
                       type="file" 
                       class="form-control"
@@ -219,11 +274,10 @@
                       id="resume" 
                       @change="handleFileUpload"
                       accept=".pdf"
-                      required
                     >
                     <div class="form-text">
                       <i class="fas fa-info-circle me-1"></i>
-                      Please upload your resume in PDF format (max 5MB)
+                      Please upload your resume in PDF format (max 5MB) - Optional but recommended
                     </div>
                     <div v-if="errors.resume" class="invalid-feedback">
                       {{ errors.resume }}
@@ -252,7 +306,7 @@
                       required
                     >
                     <label class="form-check-label" for="termsAccepted">
-                      I agree to the <a href="#" class="text-primary">terms and conditions</a> and confirm that all information provided is accurate *
+                      I confirm that all information provided is accurate *
                     </label>
                     <div v-if="errors.termsAccepted" class="invalid-feedback">
                       {{ errors.termsAccepted }}
@@ -278,43 +332,58 @@
                   </button>
                 </div>
               </form>
-
-              <!-- Success Message -->
-              <div v-if="showSuccess" class="alert alert-success mt-4" role="alert">
-                <div class="d-flex align-items-start">
-                  <i class="fas fa-check-circle me-2 mt-1"></i>
-                  <div>
-                    <strong>Application Submitted Successfully!</strong>
-                    <p class="mb-3">
-                      Thank you for applying to Team Mavericks. We will review your application and get back to you soon.
-                    </p>
-                    
-                    <div class="mt-3 p-3 rounded">
-                      <h6 class="mb-2">
-                        <i class="fab fa-whatsapp text-success me-2"></i>
-                        Join Our Community
-                      </h6>
-                      <p class="mb-2 small">
-                        While we review your application, join our WhatsApp group to stay updated with Team Mavericks activities, events, and announcements!
-                      </p>
-                      <a 
-                        href=" https://chat.whatsapp.com/D64S9cQtZa8K3JHfrYHoW5?mode=ems_wa_t" 
-                        class="btn btn-success btn-sm"
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                      >
-                        <i class="fab fa-whatsapp me-1"></i>
-                        Join WhatsApp Group
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Success Modal -->
+    <div v-if="showSuccess" class="success-modal-overlay" @click="closeSuccessModal">
+      <div class="success-modal" @click.stop>
+        <div class="modal-header">
+          <button class="modal-close" @click="closeSuccessModal">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        
+        <div class="modal-content text-center">
+          <div class="success-icon mb-3">
+            <i class="fas fa-check-circle text-success"></i>
+          </div>
+          
+          <h3 class="text-success mb-3">Application Submitted Successfully!</h3>
+          
+          <p class="mb-4 text-muted">
+            Thank you for applying to Team Mavericks. We will review your application and get back to you soon.
+          </p>
+          
+          <div class="whatsapp-section p-4 bg-light rounded mb-4">
+            <h5 class="mb-3">
+              <i class="fab fa-whatsapp text-success me-2"></i>
+              Join Our Community
+            </h5>
+            <p class="mb-3 small text-muted">
+              While we review your application, join our WhatsApp group to stay updated with Team Mavericks activities, events, and announcements!
+            </p>
+            <a 
+              href="https://chat.whatsapp.com/D64S9cQtZa8K3JHfrYHoW5?mode=ems_wa_t" 
+              class="btn btn-success"
+              target="_blank" 
+              rel="noopener noreferrer"
+              @click="closeSuccessModal"
+            >
+              <i class="fab fa-whatsapp me-2"></i>
+              Join WhatsApp Group
+            </a>
+          </div>
+          
+          <button class="btn btn-primary" @click="closeSuccessModal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -332,6 +401,9 @@ export default {
       otherBranchCode: '',
       email: '',
       phoneNumber: '',
+      gender: '',
+      program: '',
+      year: '',
       motivation: '',
       skills: '',
       resume: null,
@@ -375,8 +447,8 @@ export default {
 
       if (!formData.email.trim()) {
         errors.email = 'Email is required'
-      } else if (!/^[^\s@]+@sliet\.ac\.in$/.test(formData.email.trim())) {
-        errors.email = 'Please enter a valid SLIET email address (@sliet.ac.in)'
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
+        errors.email = 'Please enter a valid email address'
       }
 
       if (!formData.phoneNumber.trim()) {
@@ -385,8 +457,16 @@ export default {
         errors.phoneNumber = 'Please enter a valid Indian phone number'
       }
 
-      if (!formData.resume) {
-        errors.resume = 'Resume is required'
+      if (!formData.gender) {
+        errors.gender = 'Please select your gender'
+      }
+
+      if (!formData.program) {
+        errors.program = 'Please select your program'
+      }
+
+      if (!formData.year) {
+        errors.year = 'Please select your year'
       }
 
       if (!formData.termsAccepted) {
@@ -455,6 +535,8 @@ export default {
           }),
           email: formData.email,
           phoneNumber: formData.phoneNumber,
+          gender: formData.gender,
+          program_year: `${formData.program} ${formData.year}`, // Combine program and year as requested
           motivation: formData.motivation,
           skills: formData.skills || 'Not provided',
           termsAccepted: formData.termsAccepted,
@@ -473,7 +555,7 @@ export default {
           }
         }
 
-        const scriptUrl = 'https://script.google.com/macros/s/AKfycbwErnO1GcDr7W98i4tGK-QwxPBZWmuvWUGvugm1KHvczO8xuReXe5kw_wmWarkMfr57Bw/exec'
+        const scriptUrl = 'https://script.google.com/macros/s/AKfycbzwy8DZN8jAfRBvXLS4H2v4SDcRvwZ4tpVRpUgax_ou0ZOE0ThoEY74ItSwWX7iAKb0oQ/exec'
         console.log('[Submit] Starting submission attempts')
 
         // Attempt 1: JSON
@@ -612,6 +694,10 @@ export default {
       }
     }
 
+    const closeSuccessModal = () => {
+      showSuccess.value = false
+    }
+
     return {
       formData,
       errors,
@@ -619,7 +705,8 @@ export default {
       showSuccess,
       handleFileUpload,
       removeFile,
-      submitForm
+      submitForm,
+      closeSuccessModal
     }
   }
 }
@@ -742,6 +829,131 @@ export default {
   
   .hero-content h1 {
     font-size: 2.5rem;
+  }
+}
+
+/* Success Modal Styles */
+.success-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.success-modal {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideIn 0.4s ease-out;
+}
+
+.modal-header {
+  position: relative;
+  padding: 20px 20px 0;
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #6c757d;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: #dc3545;
+  transform: scale(1.1);
+}
+
+.modal-content {
+  padding: 20px 40px 40px;
+}
+
+.success-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.success-icon i {
+  color: #28a745;
+}
+
+.whatsapp-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 1px solid #e3f2fd;
+}
+
+.whatsapp-section .btn-success {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  border: none;
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-section .btn-success:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+}
+
+/* Modal Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Mobile Modal Styles */
+@media (max-width: 768px) {
+  .success-modal {
+    width: 95%;
+    margin: 20px;
+  }
+  
+  .modal-content {
+    padding: 15px 25px 30px;
+  }
+  
+  .success-icon {
+    font-size: 3rem;
   }
 }
 </style>

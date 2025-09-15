@@ -4,7 +4,9 @@ export const coordintors = [
   { name: 'Ankita Singh', designation: 'Co-cordinator' },
   { name: 'Ankit', designation: 'Technical Head' },
   { name: 'Prashant', designation: 'head' },
-  { name: 'Devansh', designation: 'Event Coordinator'}
+  { name: 'Devansh', designation: 'Event Coordinator' },
+  { name: 'Sandarbh Kumar', designation: 'Resource Head' },
+  { name: 'Harsh Anand', designation: 'Executive Head' }
 ]
 
 // Current members data
@@ -12,9 +14,10 @@ export const members = [
   { name: 'Teja Reddy', designation: 'Student Coordinator', img_url: '/images/team-img/KOYEE TEJA REDDY.jpg', batch: '2022-2026', branch: 'GCT' },
   { name: 'Ankita Singh', designation: 'Co-Coordinator', img_url: '/images/team-img/Ankita Singh.jpg', batch: '2023-2026', branch: 'GEE' },
   { name: 'Devansh', designation: 'Event Coordinator', img_url: '/images/team-img/DEVANSH.jpg', batch: '2022-2026', branch: 'GME' },
-  { name: 'Ankit Kumar', designation: 'Projects Head', img_url: '/images/team-img/2010417 - Ankit Kumar Sha.jpg', batch: '2023-2026', branch: 'GEE' },
+  { name: 'Ankit Kumar', designation: 'Projects Head', img_url: '/images/team-img/2010417 - Ankit Kumar Sha.jpg', batch: '2023-2026', branch: 'GEC' },
   { name: 'Prashant Mishra', designation: 'Technical Head', img_url: '/images/team-img/Prahant Mishra.jpg', batch: '2023-2026', branch: 'GEE' },
   { name: 'Sandarbh Kumar', designation: 'Resource Head', img_url: '/images/team-img/SANDARBH KUMAR.jpg', batch: '2023-2026', branch: 'GCS' },
+  { name: 'Harsh Anand', designation: 'Executive Head', img_url: '/images/team-img/profile.png', batch: '2023-2026', branch: 'GEE' },
   { name: 'Akanksha Armo', designation: 'Jr.Student Coordinator', img_url: '/images/team-img/AKANKSHA ARMO.jpg', batch: '2023-2027', branch: 'GCS' },
   { name: 'Aadarsh Nath', designation: 'Documentation', img_url: '/images/team-img/Aadarsh Nath.JPG', batch: '2023-2027', branch: 'GCS' },
   { name: 'Piyush Gupta', designation: 'Fund Manager', img_url: '/images/team-img/PIYUSH GUPTA.jpg', batch: '2023-2027', branch: 'GEC' },
@@ -142,13 +145,13 @@ export const batch25_members = [
 //   { name: 'Ankit Kumar', designation: 'Executives', img_url: '/images/team-img/Ankit Kumar.jpg', batch: '2023-2027', branch: 'GEC' }
 // ]
 export const batch26_members = [
-  { name: 'Prashant Mishra', designation: 'Technical Head', img_url: '/images/team-img/Prahant Mishra.jpg', batch: '2023-2027', branch: 'GEE', linkedin: 'https://www.linkedin.com/in/prashant-mishra2005/', reg_no: '2334160' },
+  { name: 'Prashant Mishra', designation: 'Technical Head', img_url: '/images/team-img/Prahant Mishra.jpg', batch: '2023-2026', branch: 'GEE', linkedin: 'https://www.linkedin.com/in/prashant-mishra2005/', reg_no: '2334160' },
   { name: 'Devansh', designation: 'Event Coordinator', img_url: '/images/team-img/DEVANSH.jpg', batch: '2022-2026', branch: 'GME', linkedin: 'https://www.linkedin.com/in/devansh789/', reg_no: '2246037' },
   { name: 'Teja Reddy', designation: 'Student Coordinator', img_url: '/images/team-img/KOYEE TEJA REDDY.jpg', batch: '2022-2026', branch: 'GCT', linkedin: 'https://www.linkedin.com/in/rejareddy0489/', reg_no: '2242008' },
-  { name: 'Ankita Singh', designation: 'Co-Coordinator', img_url: '/images/team-img/Ankita Singh.jpg', batch: '2023-2027', branch: 'GEE', linkedin: 'https://www.linkedin.com/in/ankita-singh2004/', reg_no: '2334171' },
-  { name: 'Harsh Anand', designation: '', img_url: '/images/team-img/profile.png', batch: '2023-2027', branch: 'GEE', linkedin: 'https://www.linkedin.com/in/harshanand420/', reg_no: '2334154' },
-  { name: 'Ankit Kumar', designation: 'Projects Head', img_url: '/images/team-img/2010417 - Ankit Kumar Sha.jpg', batch: '2023-2027', branch: 'GEC', linkedin: 'https://www.linkedin.com/in/ankit-kumar66/', reg_no: '2333066' },
-  { name: 'Sandarbh Kumar', designation: 'Resource Head', img_url: '/images/team-img/SANDARBH KUMAR.jpg', batch: '2023-2027', branch: 'GCS', linkedin: 'https://www.linkedin.com/in/sandarbhkr/', reg_no: '2331063' }
+  { name: 'Ankita Singh', designation: 'Co-Coordinator', img_url: '/images/team-img/Ankita Singh.jpg', batch: '2023-2026', branch: 'GEE', linkedin: 'https://www.linkedin.com/in/ankita-singh2004/', reg_no: '2334171' },
+  { name: 'Harsh Anand', designation: 'Executive Head', img_url: '/images/team-img/profile.png', batch: '2023-2026', branch: 'GEE', linkedin: 'https://www.linkedin.com/in/harshanand420/', reg_no: '2334154' },
+  { name: 'Ankit Kumar', designation: 'Projects Head', img_url: '/images/team-img/2010417 - Ankit Kumar Sha.jpg', batch: '2023-2026', branch: 'GEC', linkedin: 'https://www.linkedin.com/in/ankit-kumar66/', reg_no: '2333066' },
+  { name: 'Sandarbh Kumar', designation: 'Resource Head', img_url: '/images/team-img/SANDARBH KUMAR.jpg', batch: '2023-2026', branch: 'GCS', linkedin: 'https://www.linkedin.com/in/sandarbhkr/', reg_no: '2331063' }
 ]
 
 export const batch27_members = [
@@ -272,25 +275,18 @@ export const iot_projects = [
 // Events data
 export const events = [
   {
-    title: "Robotics Workshop 2024",
-    date: "2024-03-15",
-    description: "Hands-on workshop on building and programming robots",
+    title: "Recruitment Drive 2025",
+    date: "2025-09-21",
+    description: "Recruitment drive for new members interested in robotics and technology",
     image: "/images/headline1.jpg",
     status: "Upcoming"
   },
   {
-    title: "Tech Fest 2024",
-    date: "2024-04-20",
+    title: "Tech Fest 2025",
+    date: "2025-09-20",
     description: "Annual technology festival showcasing student projects",
     image: "/images/headline2.jpg",
     status: "Upcoming"
-  },
-  {
-    title: "AI/ML Bootcamp",
-    date: "2024-02-10",
-    description: "Intensive bootcamp on artificial intelligence and machine learning",
-    image: "/images/headline1.jpg",
-    status: "Completed"
   }
 ]
 
@@ -310,6 +306,20 @@ export const gallery = [
     description: "Interactive robotics workshop with hands-on learning experience",
     category: "workshops",
     date: "2024-09-15"
+  },
+  {
+    url: "https://res.cloudinary.com/dhr8bs4xg/image/upload/v1757971047/IMG-20250517-WA0006_ws5b5q.jpg",
+    title: "Annual day Celebration",
+    description: "Celebrating the annual day with team members and faculty",
+    category: "events",
+    date: ""
+  },
+  {
+    url: "https://res.cloudinary.com/dhr8bs4xg/image/upload/v1757971049/PXL_20250331_170956178_qyoaio.jpg",
+    title: "IIT Mandi Tech Fest",
+    description: "Team Mavericks participating in IIT Mandi's prestigious tech fest",
+    category: "events",
+    date: ""
   },
   {
     url: "https://res.cloudinary.com/dhr8bs4xg/image/upload/v1746986703/IMG_5528_nemlw1.jpg",

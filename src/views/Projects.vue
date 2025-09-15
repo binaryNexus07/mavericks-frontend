@@ -240,7 +240,7 @@ export default {
       {
         title: "Smart Irrigation System",
         description: "IoT-based irrigation system that monitors soil moisture and controls water flow automatically.",
-        image: "/images/project-img/drone.jpg",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTElxfqky_N__5vAnsxLvM4mqHOLISlgP5yommNdZrrPx0dToFlY1PdQkFNEzRWx-fKw8I&usqp=CAU",
         technologies: ["ESP32", "Soil Moisture Sensor", "Relay Module", "Mobile App"],
         status: "In Progress",
         date: "2024-02-01",

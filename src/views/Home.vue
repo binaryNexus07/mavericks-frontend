@@ -122,7 +122,7 @@
       <div class="container">
         <div class="row text-center mb-5">
           <div class="col-12">
-            <h2 class="display-5 fw-bold mb-3">Meet Our Coordinators</h2>
+            <h2 class="display-5 fw-bold mb-3">Meet Our Core Team</h2>
             <p class="lead text-muted">Leadership team guiding Team Mavericks towards excellence</p>
           </div>
         </div>
@@ -301,33 +301,33 @@ export default {
 
     // Get coordinators with full details from members array
     const coordinators = computed(() => {
-      const coordinatorNames = ['Teja Reddy', 'Ankita Singh', 'Devansh', 'Ankit Kumar', 'Prashant Mishra']
+      const coordinatorNames = ['Teja Reddy', 'Ankita Singh', 'Devansh', 'Ankit Kumar', 'Prashant Mishra', 'Sandarbh Kumar', 'Harsh Anand']
       return members.filter(member => 
         coordinatorNames.some(name => member.name.includes(name.split(' ')[0]))
-      ).slice(0, 5)
+      ).slice(0, 7)
     })
 
     const facultyAdvisors = [
       {
         name: 'Prof. Mani Kant Paswan',
         designation: 'Director, SLIET',
-        department: 'Director',
+        department: 'Patron in Chief',
         qualification: '', 
         image: '/images/MKPaswan-150x150.jpg'
       },
       {
         name: 'Prof. M.M. Sinha',
         designation: 'Dean(Student Welfare)',
-        department: 'Dean(Student Welfare)',
+        department: 'Patron',
         qualification: '',
         image: '/images/MM Sinha.png'
       },
       {
         name: 'Dr. J.S. Ubhi',
-        designation: 'Faculty Advisor',
+        designation: 'Professor',
         department: 'Electronics and Communication Engineering',
         qualification: '',
-        image: '/images/Dr. J.S. Ubhi-modified.png'
+        image: '/images/Js_ubhi_sir.JPG'
       }
     ]
 

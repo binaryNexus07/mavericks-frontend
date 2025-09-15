@@ -33,6 +33,8 @@ function doPost(e) {
       const parameters = e.parameter;
       data = {
         fullName: parameters.fullName || '',
+        gender: parameters.gender || '',
+        program_year: parameters.program_year || '',
         registrationNumber: parameters.registrationNumber || '',
         trade: parameters.trade || '',
         email: parameters.email || '',
@@ -200,11 +202,186 @@ function getOrCreateSpreadsheet() {
 
 // Setup headers in the spreadsheet
 function setupHeaders(sheet) {
+  const newHeaders = [
+    'Timestamp',
+    'Full Name',
+    'Registration Number', 
+    'Gender',
+    'Program/Year',
+    'Branch/Trade',
+    'Email',
+    'Phone Number',
+    'Motivation',
+    'Technical Skills',
+    'Terms Accepted',
+    'Resume File Name',
+    'Resume Drive Link',
+    'Submission Date',
+    'Status'
+  ];
+
   if (sheet.getLastRow() === 0) {
-    const headers = [
+    // New sheet - set up fresh headers
+    sheet.getRange(1, 1, 1, newHeaders.length).setValues([newHeaders]);
+    
+    // Format headers
+    const headerRange = sheet.getRange(1, 1, 1, newHeaders.length);
+    headerRange.setBackground('#4285f4');
+    headerRange.setFontColor('white');
+    headerRange.setFontWeight('bold');
+    
+    // Freeze header row
+    sheet.setFrozenRows(1);
+    
+    // Auto-resize columns
+    sheet.autoResizeColumns(1, newHeaders.length);
+    
+    console.log('New spreadsheet created with updated headers');
+  } else {
+    // Existing sheet - check if migration is needed
+    const existingHeaders = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
+    const hasGenderColumn = existingHeaders.includes('Gender');
+    const hasProgramYearColumn = existingHeaders.includes('Program/Year');
+    
+    if (!hasGenderColumn || !hasProgramYearColumn) {
+      console.log('Migrating existing spreadsheet to include missing columns');
+      migrateExistingSheet(sheet, existingHeaders, newHeaders);
+    } else {
+      console.log('Spreadsheet already has all required columns - no migration needed');
+    }
+  }
+}
+
+// Migrate existing spreadsheet to new structure
+function migrateExistingSheet(sheet, oldHeaders, newHeaders) {
+  try {
+    console.log('Starting sheet migration...');
+    
+    // Get all existing data
+    const lastRow = sheet.getLastRow();
+    const lastCol = sheet.getLastColumn();
+    
+    if (lastRow > 1) {
+      // Get all existing data (excluding headers)
+      const existingData = sheet.getRange(2, 1, lastRow - 1, lastCol).getValues();
+      
+      // Create mapping from old structure to new structure
+      const columnMap = createColumnMapping(oldHeaders, newHeaders);
+      console.log('Column mapping:', columnMap);
+      
+      // Transform existing data to new structure
+      const migratedData = existingData.map(row => {
+        const newRow = new Array(newHeaders.length).fill('');
+        
+        // Map existing data to new positions
+        oldHeaders.forEach((oldHeader, oldIndex) => {
+          const newIndex = columnMap[oldHeader];
+          if (newIndex !== undefined && row[oldIndex] !== undefined) {
+            newRow[newIndex] = row[oldIndex];
+          }
+        });
+        
+        // Set default values for new columns
+        const genderIndex = newHeaders.indexOf('Gender');
+        if (genderIndex !== -1 && !newRow[genderIndex]) {
+          newRow[genderIndex] = 'Not specified'; // Default for existing records
+        }
+        
+        const programYearIndex = newHeaders.indexOf('Program/Year');
+        if (programYearIndex !== -1 && !newRow[programYearIndex]) {
+          newRow[programYearIndex] = 'Not specified'; // Default for existing records
+        }
+        
+        return newRow;
+      });
+      
+      // Clear existing data (keep headers for now)
+      if (lastRow > 1) {
+        sheet.getRange(2, 1, lastRow - 1, lastCol).clear();
+      }
+      
+      // Set new headers
+      sheet.getRange(1, 1, 1, newHeaders.length).setValues([newHeaders]);
+      
+      // Insert migrated data
+      if (migratedData.length > 0) {
+        sheet.getRange(2, 1, migratedData.length, newHeaders.length).setValues(migratedData);
+      }
+      
+      // Format new headers
+      const headerRange = sheet.getRange(1, 1, 1, newHeaders.length);
+      headerRange.setBackground('#4285f4');
+      headerRange.setFontColor('white'); 
+      headerRange.setFontWeight('bold');
+      
+      // Auto-resize columns
+      sheet.autoResizeColumns(1, newHeaders.length);
+      
+      console.log(`Migration completed! Migrated ${migratedData.length} records`);
+      
+      // Add migration log entry
+      sheet.appendRow([
+        new Date(),
+        'SYSTEM MIGRATION',
+        '',
+        'System Update',
+        'Not specified',
+        'system@mavericks.sliet.ac.in',
+        '',
+        `Spreadsheet migrated to include Gender and Program/Year columns. ${migratedData.length} existing records preserved.`,
+        '',
+        'Yes',
+        '',
+        '',
+        new Date().toISOString(),
+        'Migration'
+      ]);
+      
+    } else {
+      // Only headers exist, just update them
+      sheet.getRange(1, 1, 1, newHeaders.length).setValues([newHeaders]);
+      console.log('Updated headers only - no data to migrate');
+    }
+    
+  } catch (error) {
+    console.error('Migration failed:', error);
+    throw new Error('Sheet migration failed: ' + error.toString());
+  }
+}
+
+// Create mapping between old and new column positions
+function createColumnMapping(oldHeaders, newHeaders) {
+  const mapping = {};
+  
+  oldHeaders.forEach((oldHeader, oldIndex) => {
+    const newIndex = newHeaders.indexOf(oldHeader);
+    if (newIndex !== -1) {
+      mapping[oldHeader] = newIndex;
+    }
+  });
+  
+  return mapping;
+}
+
+// Manual migration function - can be called from Apps Script editor
+function manualMigration() {
+  try {
+    const spreadsheet = SpreadsheetApp.openById(SPREADSHEET_ID);
+    const sheet = spreadsheet.getActiveSheet();
+    
+    console.log('Starting manual migration...');
+    
+    // Get current headers
+    const existingHeaders = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
+    console.log('Current headers:', existingHeaders);
+    
+    // Expected new headers
+    const newHeaders = [
       'Timestamp',
-      'Full Name',
+      'Full Name', 
       'Registration Number',
+      'Gender',
+      'Program/Year',
       'Branch/Trade',
       'Email',
       'Phone Number',
@@ -217,19 +394,39 @@ function setupHeaders(sheet) {
       'Status'
     ];
     
-    sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
+    const hasGenderColumn = existingHeaders.includes('Gender');
+    const hasProgramYearColumn = existingHeaders.includes('Program/Year');
     
-    // Format headers
-    const headerRange = sheet.getRange(1, 1, 1, headers.length);
-    headerRange.setBackground('#4285f4');
-    headerRange.setFontColor('white');
-    headerRange.setFontWeight('bold');
+    if (!hasGenderColumn || !hasProgramYearColumn) {
+      migrateExistingSheet(sheet, existingHeaders, newHeaders);
+      console.log('Manual migration completed successfully!');
+      return 'Migration completed successfully!';
+    } else {
+      console.log('No migration needed - Gender column already exists');
+      return 'No migration needed - spreadsheet is already up to date';
+    }
     
-    // Freeze header row
-    sheet.setFrozenRows(1);
+  } catch (error) {
+    console.error('Manual migration failed:', error);
+    return 'Migration failed: ' + error.toString();
+  }
+}
+
+// Backup function - creates a backup before migration
+function createBackupBeforeMigration() {
+  try {
+    const originalSpreadsheet = SpreadsheetApp.openById(SPREADSHEET_ID);
+    const backupName = `Mavericks Registration Backup - ${new Date().toISOString().split('T')[0]}`;
     
-    // Auto-resize columns
-    sheet.autoResizeColumns(1, headers.length);
+    // Create backup copy
+    const backup = originalSpreadsheet.copy(backupName);
+    
+    console.log('Backup created:', backup.getUrl());
+    return 'Backup created successfully: ' + backup.getUrl();
+    
+  } catch (error) {
+    console.error('Backup creation failed:', error);
+    return 'Backup failed: ' + error.toString();
   }
 }
 
@@ -239,6 +436,8 @@ function processFormData(data) {
     new Date(), // Timestamp
     data.fullName || '',
     data.registrationNumber || '',
+    data.gender || '',
+    data.program_year || '',
     data.trade || '',
     data.email || '',
     data.phoneNumber || '',
@@ -332,6 +531,7 @@ Thank you for your interest in joining Team Mavericks!
 We have received your registration with the following details:
 - Registration Number: ${data.registrationNumber}
 - Branch: ${data.trade}
+- Gender: ${data.gender}
 - Email: ${data.email}
 - Phone: ${data.phoneNumber}
 
@@ -354,7 +554,7 @@ This is an automated message. Please do not reply to this email.
 // Optional: Send notification email to team
 function sendTeamNotification(data) {
   try {
-    const teamEmail = 'your-team-email@example.com'; // Replace with actual team email
+    const teamEmail = 'myndroid4004@gmail.com'; // Replace with actual team email
     const subject = 'New Student Registration - Team Mavericks';
     const body = `
 New student registration received:
@@ -362,6 +562,8 @@ New student registration received:
 Name: ${data.fullName}
 Registration Number: ${data.registrationNumber}
 Branch: ${data.trade}
+Gender: ${data.gender}
+Program/Year: ${data.program_year}
 Email: ${data.email}
 Phone: ${data.phoneNumber}
 

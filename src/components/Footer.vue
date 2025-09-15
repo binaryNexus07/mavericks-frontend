@@ -10,10 +10,10 @@
           </p>
           <div class="social-links">
             <a href="https://www.facebook.com/mavericks.sliet" class="social-link"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <!-- <a href="#" class="social-link"><i class="fab fa-twitter"></i></a> -->
             <a href="https://instagram.com/mavericks_sliet?igshid=NTdlMDg3MTY=" class="social-link"><i class="fab fa-instagram"></i></a>
             <a href="https://www.linkedin.com/company/team-mavericks/" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            <!-- <a href="#" class="social-link"><i class="fab fa-youtube"></i></a> -->
           </div>
         </div>
         
@@ -37,11 +37,20 @@
             </li>
             <li class="contact-item">
               <i class="fas fa-phone contact-icon"></i>
-              <span>+91 ___________</span>
+              <ul class="contact-list" style="padding:0; margin:0; list-style:none;">
+                <li style="display:flex; justify-content:space-between; font-size:0.95rem; margin-bottom:4px;">
+                  <span class="contact-name" style="font-weight:500;">Teja Reddy</span>
+                  <span class="contact-phone" style="color:#b0b0b0;">+91 7013261300</span>
+                </li>
+                <li style="display:flex; justify-content:space-between; font-size:0.95rem;">
+                  <span class="contact-name" style="font-weight:500;">Prashant Mishra</span>
+                  <span class="contact-phone" style="color:#b0b0b0;">+91 6386472530</span>
+                </li>
+              </ul>
             </li>
             <li class="contact-item">
               <i class="fas fa-envelope contact-icon"></i>
-              <span>maverick@sliet.ac.in</span>
+              <span>mavericks@sliet.ac.in</span>
             </li>
           </ul>
         </div>

@@ -51,8 +51,9 @@
                   <i class="fas fa-phone text-primary fa-2x"></i>
                 </div>
                 <div>
-                  <h6 class="mb-1">Phone</h6>
-                  <p class="text-muted mb-0">+91 ___________</p>
+                    <h6 class="mb-1">Phone</h6>
+                    <p class="text-muted mb-0">+91 7013261300 (Teja Reddy)</p>
+                    <p class="text-muted mb-0">+91 6386472530 (Prashant Mishra)</p>
                 </div>
               </div>
               
@@ -66,7 +67,7 @@
                 </div>
               </div>
               
-              <div class="contact-item d-flex align-items-center mb-4">
+              <!-- <div class="contact-item d-flex align-items-center mb-4">
                 <div class="contact-icon me-3">
                   <i class="fas fa-clock text-primary fa-2x"></i>
                 </div>
@@ -77,7 +78,7 @@
                     Saturday: 9:00 AM - 1:00 PM
                   </p>
                 </div>
-              </div>
+              </div> -->
             </div>
             
             <!-- Social Media -->
@@ -87,18 +88,18 @@
                 <a href="https://www.facebook.com/mavericks.sliet" class="social-link me-3" target="_blank" rel="noopener noreferrer">
                   <i class="fab fa-facebook-f fa-2x text-primary"></i>
                 </a>
-                <a href="#" class="social-link me-3">
+                <!-- <a href="#" class="social-link me-3">
                   <i class="fab fa-twitter fa-2x text-primary"></i>
-                </a>
+                </a> -->
                 <a href="https://instagram.com/mavericks_sliet?igshid=NTdlMDg3MTY=" class="social-link me-3" target="_blank" rel="noopener noreferrer">
                   <i class="fab fa-instagram fa-2x text-primary"></i>
                 </a>
                 <a href="https://www.linkedin.com/company/team-mavericks/" class="social-link me-3" target="_blank" rel="noopener noreferrer">
                   <i class="fab fa-linkedin-in fa-2x text-primary"></i>
                 </a>
-                <a href="#" class="social-link">
+                <!-- <a href="#" class="social-link">
                   <i class="fab fa-youtube fa-2x text-primary"></i>
-                </a>
+                </a> -->
               </div>
             </div>
           </div>

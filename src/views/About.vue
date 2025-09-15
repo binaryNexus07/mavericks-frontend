@@ -293,16 +293,16 @@ export default {
     const facultyAdvisors = [
       {
         name: 'Dr. J.S. Ubhi',
-        designation: 'Head of Department',
-        department: 'Computer Science & Engineering',
-        qualification: 'Ph.D. in Computer Science',
-        image: '/images/Dr. J.S. Ubhi-modified.png'
+        designation: 'Professor',
+        department: 'Electronics and Communication Engineering',
+        qualification: 'Ph.D. in Electronics and Communication Engineering',
+        image: '/images/Js_ubhi_sir.JPG'
       },
       {
         name: 'Prof. M.M. Sinha',
-        designation: 'Assistant Professor',
-        department: 'Electronics & Communication',
-        qualification: 'M.Tech in Electronics',
+        designation: 'Dean(Student Welfare)',
+        department: 'Physics',
+        qualification: 'Ph.D. (Lattice Dynamics) Indian Institute of Technology, Delhi',
         image: '/images/MM Sinha.png'
       }
     ]
