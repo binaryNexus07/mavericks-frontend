@@ -17,7 +17,7 @@ export const members = [
   { name: 'Ankit Kumar', designation: 'Projects Head', img_url: '/images/team-img/2010417 - Ankit Kumar Sha.jpg', batch: '2023-2026', branch: 'GEC' },
   { name: 'Prashant Mishra', designation: 'Technical Head', img_url: '/images/team-img/Prahant Mishra.jpg', batch: '2023-2026', branch: 'GEE' },
   { name: 'Sandarbh Kumar', designation: 'Resource Head', img_url: '/images/team-img/SANDARBH KUMAR.jpg', batch: '2023-2026', branch: 'GCS' },
-  { name: 'Harsh Anand', designation: 'Executive Head', img_url: '/images/team-img/profile.png', batch: '2023-2026', branch: 'GEE' },
+  { name: 'Harsh Anand', designation: 'Executive Head', img_url: '/images/team-img/Harsh Anand.jpg', batch: '2023-2026', branch: 'GEE' },
   { name: 'Akanksha Armo', designation: 'Jr.Student Coordinator', img_url: '/images/team-img/AKANKSHA ARMO.jpg', batch: '2023-2027', branch: 'GCS' },
   { name: 'Aadarsh Nath', designation: 'Documentation', img_url: '/images/team-img/Aadarsh Nath.JPG', batch: '2023-2027', branch: 'GCS' },
   { name: 'Piyush Gupta', designation: 'Fund Manager', img_url: '/images/team-img/PIYUSH GUPTA.jpg', batch: '2023-2027', branch: 'GEC' },
@@ -27,20 +27,22 @@ export const members = [
   { name: 'Vishal Kumar', designation: 'Assets', img_url: '/images/team-img/VISHAL.jpg', batch: '2023-2027', branch: 'GME' },
   { name: 'Rashim Malhotra', designation: 'Executives', img_url: '/images/team-img/RASHIM MALHOTRA.png', batch: '2023-2027', branch: 'GCS' },
   { name: 'Anisha Kumari', designation: 'Executives', img_url: '/images/team-img/ANISHA KUMARI.jpg', batch: '2023-2027', branch: 'GCS' },
-  { name: 'Priyanshu Kumar', designation: 'Executives', img_url: '/images/team-img/profile.png', batch: '2023-2027', branch: 'GCS' },
+  { name: 'Priyanshu Kumar', designation: 'Executives', img_url: '/images/team-img/Priyanshu Kumar.jpg', batch: '2023-2027', branch: 'GCS' },
   { name: 'Ankit Kumar', designation: 'Executives', img_url: '/images/team-img/Ankit Kumar.jpg', batch: '2023-2027', branch: 'GEC' }
 ]
 
 // Old members data
 export const members_old = [
+  { name: 'Dhruv Patel', img_url: '/images/team-img/profile.png', batch: 'Pass out', branch: 'GEE' },
+  { name: 'Ram Kumar', img_url: '/images/team-img/profile.png', batch: 'Pass out', branch: 'GME' },
   { name: 'Kaushik Suman', img_url: '/images/team-img/profile.png', batch: '2015-2018 (LEET)', branch: '' },
   { name: 'Akshat Garg', img_url: '/images/team-img/profile.png', batch: 'Pass out', branch: 'GCS' },
   { name: 'Ajay Kumar', img_url: '/images/team-img/profile.png', batch: 'Pass out', branch: 'GEC' },
   { name: 'Dhanesh Kumar', img_url: '/images/team-img/profile.png', batch: 'Pass out', branch: 'GEC' },
-  { name: 'Dhruv Patel', img_url: '/images/team-img/profile.png', batch: 'Pass out', branch: 'GEE' },
   { name: 'Muskan Methi', img_url: '/images/team-img/profile.png', batch: 'Pass out', branch: 'GEE' },
   { name: 'Kshitiz', img_url: '/images/team-img/profile.png', batch: 'Pass out', branch: 'GEE' },
-  { name: 'Ram Kumar', img_url: '/images/team-img/profile.png', batch: 'Pass out', branch: 'GME' },
+  { name: 'Sushant Shankar', img_url: '/images/team-img/profile.png', batch: '4th year UG', branch: 'GEC' },
+  { name: 'Vikas Chaurasia', img_url: '/images/team-img/profile.png', batch: '4th year UG', branch: 'GCS' },
   { name: 'Apoorv Bansal', img_url: '/images/team-img/profile.png', batch: '4th year UG', branch: 'GME' },
   { name: 'Aman', img_url: '/images/team-img/profile.png', batch: '4th year UG', branch: 'GME' },
   { name: 'Saurabh Kumar', img_url: '/images/team-img/profile.png', batch: '4th year UG', branch: 'GME' },
@@ -48,9 +50,7 @@ export const members_old = [
   { name: 'Dheeraj Kumar', img_url: '/images/team-img/profile.png', batch: '4th year UG', branch: 'GME' },
   { name: 'Amisha nath', img_url: '/images/team-img/profile.png', batch: '4th year UG', branch: 'GCS' },
   { name: 'Ankit Sharma', img_url: '/images/team-img/profile.png', batch: '4th year UG', branch: 'GCS' },
-  { name: 'Vikas Chaurasia', img_url: '/images/team-img/profile.png', batch: '4th year UG', branch: 'GCS' },
   { name: 'Shreya sinha', img_url: '/images/team-img/profile.png', batch: '4th year UG', branch: 'GEC' },
-  { name: 'Sushant Shankar', img_url: '/images/team-img/profile.png', batch: '4th year UG', branch: 'GEC' },
   { name: 'PRIYANSHU KUMAR JHA', img_url: '/images/team-img/profile.png', batch: '4th year UG', branch: 'GEE' },
   { name: 'Aman Kumar', img_url: '/images/team-img/profile.png', batch: '4th year UG', branch: 'GEE' },
   { name: 'Amisha', img_url: '/images/team-img/profile.png', batch: '4th year UG', branch: 'GEE' },
@@ -145,13 +145,13 @@ export const batch25_members = [
 //   { name: 'Ankit Kumar', designation: 'Executives', img_url: '/images/team-img/Ankit Kumar.jpg', batch: '2023-2027', branch: 'GEC' }
 // ]
 export const batch26_members = [
-  { name: 'Prashant Mishra', designation: 'Technical Head', img_url: '/images/team-img/Prahant Mishra.jpg', batch: '2023-2026', branch: 'GEE', linkedin: 'https://www.linkedin.com/in/prashant-mishra2005/', reg_no: '2334160' },
-  { name: 'Devansh', designation: 'Event Coordinator', img_url: '/images/team-img/DEVANSH.jpg', batch: '2022-2026', branch: 'GME', linkedin: 'https://www.linkedin.com/in/devansh789/', reg_no: '2246037' },
   { name: 'Teja Reddy', designation: 'Student Coordinator', img_url: '/images/team-img/KOYEE TEJA REDDY.jpg', batch: '2022-2026', branch: 'GCT', linkedin: 'https://www.linkedin.com/in/rejareddy0489/', reg_no: '2242008' },
   { name: 'Ankita Singh', designation: 'Co-Coordinator', img_url: '/images/team-img/Ankita Singh.jpg', batch: '2023-2026', branch: 'GEE', linkedin: 'https://www.linkedin.com/in/ankita-singh2004/', reg_no: '2334171' },
-  { name: 'Harsh Anand', designation: 'Executive Head', img_url: '/images/team-img/profile.png', batch: '2023-2026', branch: 'GEE', linkedin: 'https://www.linkedin.com/in/harshanand420/', reg_no: '2334154' },
-  { name: 'Ankit Kumar', designation: 'Projects Head', img_url: '/images/team-img/2010417 - Ankit Kumar Sha.jpg', batch: '2023-2026', branch: 'GEC', linkedin: 'https://www.linkedin.com/in/ankit-kumar66/', reg_no: '2333066' },
-  { name: 'Sandarbh Kumar', designation: 'Resource Head', img_url: '/images/team-img/SANDARBH KUMAR.jpg', batch: '2023-2026', branch: 'GCS', linkedin: 'https://www.linkedin.com/in/sandarbhkr/', reg_no: '2331063' }
+  { name: 'Prashant Mishra', designation: 'Technical Head', img_url: '/images/team-img/Prahant Mishra.jpg', batch: '2023-2026', branch: 'GEE', linkedin: 'https://www.linkedin.com/in/prashant-mishra2005/', reg_no: '2334160' },
+  { name: 'Devansh', designation: 'Event Coordinator', img_url: '/images/team-img/DEVANSH.jpg', batch: '2022-2026', branch: 'GME', linkedin: 'https://www.linkedin.com/in/devansh789/', reg_no: '2246037' },
+  { name: 'Sandarbh Kumar', designation: 'Resource Head', img_url: '/images/team-img/SANDARBH KUMAR.jpg', batch: '2023-2026', branch: 'GCS', linkedin: 'https://www.linkedin.com/in/sandarbhkr/', reg_no: '2331063' },
+  { name: 'Harsh Anand', designation: 'Executive Head', img_url: '/images/team-img/Harsh Anand.jpg', batch: '2023-2026', branch: 'GEE', linkedin: 'https://www.linkedin.com/in/harshanand420/', reg_no: '2334154' },
+  { name: 'Ankit Kumar', designation: 'Projects Head', img_url: '/images/team-img/2010417 - Ankit Kumar Sha.jpg', batch: '2023-2026', branch: 'GEC', linkedin: 'https://www.linkedin.com/in/ankit-kumar66/', reg_no: '2333066' }
 ]
 
 export const batch27_members = [
@@ -241,7 +241,7 @@ export const batch27_members = [
     designation: "Executives",
     branch: "GCS",
     linkedin: "https://www.linkedin.com/in/priyanshu-kumar-b80672297/",
-    img_url: "/images/team-img/profile.png"
+    img_url: "/images/team-img/Priyanshu Kumar.jpg"
   }
 ]
 
