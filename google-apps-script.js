@@ -431,6 +431,10 @@ function createBackupBeforeMigration() {
 }
 
 // Process form data into array for spreadsheet row
+// Column structure (1-based indexing):
+// 1=Timestamp, 2=Full Name, 3=Registration Number, 4=Gender, 5=Program/Year, 
+// 6=Branch/Trade, 7=Email, 8=Phone Number, 9=Motivation, 10=Technical Skills,
+// 11=Terms Accepted, 12=Resume File Name, 13=Resume Drive Link, 14=Submission Date, 15=Status
 function processFormData(data) {
   return [
     new Date(), // Timestamp
@@ -499,7 +503,7 @@ function handleFileUpload(data, spreadsheet) {
       // Update the spreadsheet with the Drive link
       const sheet = spreadsheet.getActiveSheet();
       const lastRow = sheet.getLastRow();
-      sheet.getRange(lastRow, 11).setValue(file.getUrl()); // Resume Drive Link column
+      sheet.getRange(lastRow, 13).setValue(file.getUrl()); // Resume Drive Link column (13th column)
       
       return file.getUrl();
     }
@@ -510,7 +514,7 @@ function handleFileUpload(data, spreadsheet) {
     try {
       const sheet = spreadsheet.getActiveSheet();
       const lastRow = sheet.getLastRow();
-      sheet.getRange(lastRow, 11).setValue('File upload failed: ' + error.toString());
+      sheet.getRange(lastRow, 13).setValue('File upload failed: ' + error.toString()); // Resume Drive Link column (13th column)
     } catch (sheetError) {
       console.error('Error updating spreadsheet with file error:', sheetError);
     }

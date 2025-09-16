@@ -555,7 +555,7 @@ export default {
           }
         }
 
-        const scriptUrl = 'https://script.google.com/macros/s/AKfycbzwy8DZN8jAfRBvXLS4H2v4SDcRvwZ4tpVRpUgax_ou0ZOE0ThoEY74ItSwWX7iAKb0oQ/exec'
+        const scriptUrl = 'https://script.google.com/macros/s/AKfycbxNkJVijQke_f81-tppBxwchrKpzQwI-HiRfqSWjq-RjnITHCh1cUKCnZUwtdowVTz-Pw/exec'
         console.log('[Submit] Starting submission attempts')
 
         // Attempt 1: JSON
