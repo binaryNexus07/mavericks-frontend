@@ -21,7 +21,7 @@
         <div class="popup-deadline">
           <div class="deadline-badge">
             <i class="fas fa-calendar-alt me-2"></i>
-            <span>Last Date: <strong>21st September, 2025</strong></span>
+            <span>Last Date: <strong>26st September, 2025</strong></span>
           </div>
         </div>
         
