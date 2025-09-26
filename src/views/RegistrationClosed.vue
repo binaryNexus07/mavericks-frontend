@@ -77,11 +77,7 @@
                     <ul class="list-unstyled text-start">
                       <li class="mb-2">
                         <i class="fas fa-check text-success me-2"></i>
-                        Valid SLIET Student ID
-                      </li>
-                      <li class="mb-2">
-                        <i class="fas fa-check text-success me-2"></i>
-                        Resume (printed copy)
+                        Valid SLIET Student ID (if applicable or any other ID proof)
                       </li>
                       <li class="mb-2">
                         <i class="fas fa-check text-success me-2"></i>
