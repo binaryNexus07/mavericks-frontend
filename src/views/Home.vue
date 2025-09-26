@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <!-- Registration Popup Component -->
-    <RegistrationPopup />
+    <!-- <RegistrationPopup /> -->
 
     <!-- Hero Section with Image Slider -->
     <section class="hero-section position-relative">

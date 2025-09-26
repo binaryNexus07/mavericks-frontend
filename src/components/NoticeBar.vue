@@ -6,13 +6,13 @@
           <i class="fas fa-megaphone"></i>
         </div>
         <div class="notice-text">
-          <strong>🎉 Recruitment Open!</strong>
-          Team Mavericks is recruiting new members. Last date: <strong>26st September, 2025</strong>
+          <strong>👋 Welcome!</strong>
+          We're glad to have you here. Stay tuned for the latest updates and announcements from Team Mavericks.
         </div>
         <div class="notice-actions">
-          <router-link to="/student-registration" class="notice-btn">
+          <router-link to="/contact" class="notice-btn">
             <i class="fas fa-user-plus me-1"></i>
-            Apply Now
+            Join Us
           </router-link>
           <button class="notice-close" @click="hideNotice" title="Close">
             <i class="fas fa-times"></i>
