@@ -301,10 +301,10 @@ export default {
 
     // Get coordinators with full details from members array
     const coordinators = computed(() => {
-      const coordinatorNames = ['Teja Reddy', 'Ankita Singh', 'Devansh', 'Ankit Kumar', 'Prashant Mishra', 'Sandarbh Kumar', 'Harsh Anand']
+      const coordinatorNames = ['Kumar Sparsh', 'Akanksha Armo','Vishal Kumar', 'Rashim Malhotra', 'Abhishek Yadav', 'Piyush Gupta', 'Dhairya Baranwal', 'Ankit Kumar', 'Anisha Kumari', 'Priyanshu Kumar', 'Aadarsh Nath']
       return members.filter(member => 
         coordinatorNames.some(name => member.name.includes(name.split(' ')[0]))
-      ).slice(0, 7)
+      ).slice(0, 10) // Limit to 10 coordinators
     })
 
     const facultyAdvisors = [

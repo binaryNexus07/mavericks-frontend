@@ -1,34 +1,31 @@
 // Coordinators data
 export const coordintors = [
-  { name: 'Teja Redddy', designation: 'Coordinator' },
-  { name: 'Ankita Singh', designation: 'Co-cordinator' },
-  { name: 'Ankit', designation: 'Technical Head' },
-  { name: 'Prashant', designation: 'head' },
-  { name: 'Devansh', designation: 'Event Coordinator' },
-  { name: 'Sandarbh Kumar', designation: 'Resource Head' },
-  { name: 'Harsh Anand', designation: 'Executive Head' }
+  { name: 'Kumar Sparsh', designation: 'Student Coordinator' },
+  { name: 'Akanksha Armo', designation: 'Student Coordinator' },
+  { name: 'Rashim Malhotra', designation: 'Executives'},
+  { name: 'Abhishek Yadav', designation: 'Website Head' },
+  { name: 'Piyush Gupta', designation: 'Treasure Head' },
+  { name: 'Dhairya Baranwal', designation: 'Event Coordinator', },
+  { name: 'Vishal Kumar', designation: 'Co-Coordinator' },
+  { name: 'Ankit Kumar', designation: 'Technical Head' },
+  { name: 'Anisha Kumari', designation: 'Programming Head' },
+  { name: 'Priyanshu Kumar', designation: 'Project Head' },
+  { name: 'Aadarsh Nath', designation: 'Resource Head' }
 ]
 
 // Current members data
 export const members = [
-  { name: 'Teja Reddy', designation: 'Student Coordinator', img_url: '/images/team-img/KOYEE TEJA REDDY.jpg', batch: '2022-2026', branch: 'GCT' },
-  { name: 'Ankita Singh', designation: 'Co-Coordinator', img_url: '/images/team-img/Ankita Singh.jpg', batch: '2023-2026', branch: 'GEE' },
-  { name: 'Devansh', designation: 'Event Coordinator', img_url: '/images/team-img/DEVANSH.jpg', batch: '2022-2026', branch: 'GME' },
-  { name: 'Ankit Kumar', designation: 'Projects Head', img_url: '/images/team-img/2010417 - Ankit Kumar Sha.jpg', batch: '2023-2026', branch: 'GEC' },
-  { name: 'Prashant Mishra', designation: 'Technical Head', img_url: '/images/team-img/Prahant Mishra.jpg', batch: '2023-2026', branch: 'GEE' },
-  { name: 'Sandarbh Kumar', designation: 'Resource Head', img_url: '/images/team-img/SANDARBH KUMAR.jpg', batch: '2023-2026', branch: 'GCS' },
-  { name: 'Harsh Anand', designation: 'Executive Head', img_url: '/images/team-img/Harsh Anand.jpg', batch: '2023-2026', branch: 'GEE' },
-  { name: 'Akanksha Armo', designation: 'Jr.Student Coordinator', img_url: '/images/team-img/AKANKSHA ARMO.jpg', batch: '2023-2027', branch: 'GCS' },
-  { name: 'Aadarsh Nath', designation: 'Documentation', img_url: '/images/team-img/Aadarsh Nath.JPG', batch: '2023-2027', branch: 'GCS' },
-  { name: 'Piyush Gupta', designation: 'Fund Manager', img_url: '/images/team-img/PIYUSH GUPTA.jpg', batch: '2023-2027', branch: 'GEC' },
-  { name: 'Kumar Sparsh', designation: 'Social Media', img_url: '/images/team-img/Kumar Sparsh.jpg', batch: '2023-2027', branch: 'GCS' },
+  { name: 'Kumar Sparsh', designation: 'Student Coordinator', img_url: '/images/team-img/Kumar Sparsh.jpg', batch: '2023-2027', branch: 'GCS' },
+  { name: 'Akanksha Armo', designation: 'Student Coordinator', img_url: '/images/team-img/AKANKSHA ARMO.jpg', batch: '2023-2027', branch: 'GCS' },
+  { name: 'Vishal Kumar', designation: 'Co-Coordinator', img_url: '/images/team-img/VISHAL.jpg', batch: '2023-2027', branch: 'GME' },
+  { name: 'Piyush Gupta', designation: 'Treasure Head', img_url: '/images/team-img/PIYUSH GUPTA.jpg', batch: '2023-2027', branch: 'GEC' },
   { name: 'Abhishek Yadav', designation: 'Website Head', img_url: '/images/team-img/ABHISHEK YADAV.jpg', batch: '2023-2027', branch: 'GCS' },
-  { name: 'Dhairya Baranwal', designation: 'Public Relations', img_url: '/images/team-img/DHAIRYA BARANWAL.jpg', batch: '2023-2027', branch: 'GCS' },
-  { name: 'Vishal Kumar', designation: 'Assets', img_url: '/images/team-img/VISHAL.jpg', batch: '2023-2027', branch: 'GME' },
-  { name: 'Rashim Malhotra', designation: 'Executives', img_url: '/images/team-img/RASHIM MALHOTRA.png', batch: '2023-2027', branch: 'GCS' },
-  { name: 'Anisha Kumari', designation: 'Executives', img_url: '/images/team-img/ANISHA KUMARI.jpg', batch: '2023-2027', branch: 'GCS' },
-  { name: 'Priyanshu Kumar', designation: 'Executives', img_url: '/images/team-img/Priyanshu Kumar.jpg', batch: '2023-2027', branch: 'GCS' },
-  { name: 'Ankit Kumar', designation: 'Executives', img_url: '/images/team-img/Ankit Kumar.jpg', batch: '2023-2027', branch: 'GEC' }
+  { name: 'Dhairya Baranwal', designation: 'Event Coordinator', img_url: '/images/team-img/DHAIRYA BARANWAL.jpg', batch: '2023-2027', branch: 'GCS' },
+  { name: 'Rashim Malhotra', designation: 'Programming Head', img_url: '/images/team-img/RASHIM MALHOTRA.png', batch: '2023-2027', branch: 'GCS' },
+  { name: 'Anisha Kumari', designation: 'Programming Head', img_url: '/images/team-img/ANISHA KUMARI.jpg', batch: '2023-2027', branch: 'GCS' },
+  { name: 'Priyanshu Kumar', designation: 'Project Head', img_url: '/images/team-img/Priyanshu Kumar.jpg', batch: '2023-2027', branch: 'GCS' },
+  { name: 'Ankit Kumar', designation: 'Technical Head', img_url: '/images/team-img/Ankit Kumar.jpg', batch: '2023-2027', branch: 'GEC' },
+  { name: 'Aadarsh Nath', designation: 'Resource Head', img_url: '/images/team-img/Aadarsh Nath.JPG', batch: '2023-2027', branch: 'GCS' },
 ]
 
 // Old members data
@@ -156,9 +153,25 @@ export const batch26_members = [
 
 export const batch27_members = [
   {
+    name: "Kumar Sparsh",
+    reg_no: "2341033",
+    designation: "Student Coordinator",
+    branch: "GCS",
+    linkedin: "https://www.linkedin.com/in/kumar-sparsh-23b887292/",
+    img_url: "/images/team-img/Kumar Sparsh.jpg"
+  },
+  {
+    name: "Akanksha Armo",
+    reg_no: "2341003",
+    designation: "Student Coordinator",
+    branch: "GCS",
+    linkedin: "https://www.linkedin.com/in/akanksha-armo-0a348a282/",
+    img_url: "/images/team-img/AKANKSHA ARMO.jpg"
+  },
+  {
     name: "Vishal Kumar",
     reg_no: "2346011",
-    designation: "Assets",
+    designation: "Co-Coordinator",
     branch: "GME",
     linkedin: "https://www.linkedin.com/in/vishal-mechie/",
     img_url: "/images/team-img/VISHAL.jpg"
@@ -166,26 +179,10 @@ export const batch27_members = [
   {
     name: "Piyush Gupta",
     reg_no: "2343020",
-    designation: "Fund Manager",
+    designation: "Treasure Head",
     branch: "GEC",
     linkedin: "https://www.linkedin.com/in/piyush-gupta-4b028b299/",
     img_url: "/images/team-img/PIYUSH GUPTA.jpg"
-  },
-  {
-    name: "Ankit Kumar",
-    reg_no: "2343014",
-    designation: "Executives",
-    branch: "GEC",
-    linkedin: "https://www.linkedin.com/in/ankit-kumar-3293282a6/",
-    img_url: "/images/team-img/Ankit Kumar.jpg"
-  },
-  {
-    name: "Kumar Sparsh",
-    reg_no: "2341033",
-    designation: "Social Media",
-    branch: "GCS",
-    linkedin: "https://www.linkedin.com/in/kumar-sparsh-23b887292/",
-    img_url: "/images/team-img/Kumar Sparsh.jpg"
   },
   {
     name: "Abhishek Yadav",
@@ -198,31 +195,31 @@ export const batch27_members = [
   {
     name: "Rashim Malhotra",
     reg_no: "2341009",
-    designation: "Executives",
+    designation: "Programming Head",
     branch: "GCS",
     linkedin: "https://www.linkedin.com/in/rashim-malhotra/",
     img_url: "/images/team-img/RASHIM MALHOTRA.png"
   },
   {
+    name: "Ankit Kumar",
+    reg_no: "2343014",
+    designation: "Technical Head",
+    branch: "GEC",
+    linkedin: "https://www.linkedin.com/in/ankit-kumar-3293282a6/",
+    img_url: "/images/team-img/Ankit Kumar.jpg"
+  },
+  {
     name: "Dhaiya Baranwal",
     reg_no: "2341004",
-    designation: "Public Relations",
+    designation: "Event Coordinator",
     branch: "GCS",
     linkedin: "https://www.linkedin.com/in/dhairyabaranwal/",
     img_url: "/images/team-img/DHAIRYA BARANWAL.jpg"
   },
   {
-    name: "Akanksha Armo",
-    reg_no: "2341003",
-    designation: "Jr.Student Coordinator",
-    branch: "GCS",
-    linkedin: "https://www.linkedin.com/in/akanksha-armo-0a348a282/",
-    img_url: "/images/team-img/AKANKSHA ARMO.jpg"
-  },
-  {
     name: "ANISHA KUMARI",
     reg_no: "2431065",
-    designation: "Executives",
+    designation: "Programming Head",
     branch: "GCS",
     linkedin: "https://www.linkedin.com/in/anisha-kumari-34283629b/",
     img_url: "/images/team-img/ANISHA KUMARI.jpg"
@@ -230,7 +227,7 @@ export const batch27_members = [
   {
     name: "AADARSH NATH",
     reg_no: "2431051",
-    designation: "Documentation",
+    designation: "Resource Head",
     branch: "GCS",
     linkedin: "https://www.linkedin.com/in/aadarsh-nath-700752266/",
     img_url: "/images/team-img/Aadarsh Nath.JPG"
@@ -238,7 +235,7 @@ export const batch27_members = [
   {
     name: "Priyanshu Kumar",
     reg_no: "2431075",
-    designation: "Executives",
+    designation: "Project Head",
     branch: "GCS",
     linkedin: "https://www.linkedin.com/in/priyanshu-kumar-b80672297/",
     img_url: "/images/team-img/Priyanshu Kumar.jpg"
