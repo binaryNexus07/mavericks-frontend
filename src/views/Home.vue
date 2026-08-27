@@ -242,7 +242,7 @@ export default {
         image: "/images/team-heading.jpg",
         title: "Collaborative Innovation",
         description: "Working together as a team to create amazing robotics solutions and push the boundaries of technology.",
-        primaryButton: { text: "Join Our Team", link: "/contact" },
+        primaryButton: { text: "Join Our Team", link: "/student-registration" },
         secondaryButton: { text: "View Events", link: "/gallery" }
       },
       {
@@ -316,11 +316,11 @@ export default {
         image: '/images/MKPaswan-150x150.jpg'
       },
       {
-        name: 'Prof. M.M. Sinha',
+        name: 'Prof. V.K. Kukreja',
         designation: 'Dean(Student Welfare)',
         department: 'Patron',
         qualification: '',
-        image: '/images/MM Sinha.png'
+        image: '/images/dean-sw.png'
       },
       {
         name: 'Dr. J.S. Ubhi',
