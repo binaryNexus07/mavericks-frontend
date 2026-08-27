@@ -367,7 +367,7 @@
               While we review your application, join our WhatsApp group to stay updated with Team Mavericks activities, events, and announcements!
             </p>
             <a 
-              href="https://chat.whatsapp.com/D64S9cQtZa8K3JHfrYHoW5?mode=ems_wa_t" 
+              href="https://chat.whatsapp.com/EU7RGTxkJUqA73vVDXprDL" 
               class="btn btn-success"
               target="_blank" 
               rel="noopener noreferrer"
@@ -555,7 +555,7 @@ export default {
           }
         }
 
-        const scriptUrl = 'https://script.google.com/macros/s/AKfycbxNkJVijQke_f81-tppBxwchrKpzQwI-HiRfqSWjq-RjnITHCh1cUKCnZUwtdowVTz-Pw/exec'
+        const scriptUrl = 'https://script.google.com/macros/s/AKfycbxidzn4B0OKhAB2UDNDcEcmIVBaN0Hp5bPd55cFDQaN81jvJdf8rvM-EQCs7GeK55ZlgQ/exec'
         console.log('[Submit] Starting submission attempts')
 
         // Attempt 1: JSON

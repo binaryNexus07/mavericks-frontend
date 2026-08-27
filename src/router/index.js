@@ -48,12 +48,7 @@ const routes = [
   },
   {
     path: '/student-registration',
-    name: 'RegistrationClosed',
-    component: () => import('@/views/RegistrationClosed.vue')
-  },
-  {
-    path: '/onspot-registration',
-    name: 'OnSpotRegistration',
+    name: 'StudentRegistration',
     component: () => import('@/views/StudentRegistration.vue')
   },
   {
