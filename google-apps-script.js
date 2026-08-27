@@ -85,8 +85,8 @@ function doPost(e) {
       handleFileUpload(data, spreadsheet);
     }
     
-    // Send confirmation email (optional)
-    // sendConfirmationEmail(data);
+    // Send confirmation email
+    sendConfirmationEmail(data);
     
     // Return success response
     const response = {
@@ -523,10 +523,11 @@ function handleFileUpload(data, spreadsheet) {
   }
 }
 
-// Optional: Send confirmation email to the applicant
+// Send confirmation email to the applicant
 function sendConfirmationEmail(data) {
   try {
     const subject = 'Team Mavericks - Registration Received';
+    const whatsappLink = 'https://chat.whatsapp.com/EU7RGTxkJUqA73vVDXprDL';
     const body = `
 Dear ${data.fullName},
 
@@ -538,6 +539,9 @@ We have received your registration with the following details:
 - Gender: ${data.gender}
 - Email: ${data.email}
 - Phone: ${data.phoneNumber}
+
+Please join our WhatsApp group for all notices and updates regarding the recruitment process:
+${whatsappLink}
 
 Our team will review your application and get back to you soon.
 
